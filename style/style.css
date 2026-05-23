@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --c-white: #F2F2F0;
+  --c-nav-bg: #4c4582;
+  --c-nav-text: #faad53;
+  --c-text: #73c7d2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* NAVBAR */
+
+nav {
+  position: absolute; /* Modifié pour fixer la nav tout en haut */
+  top: 0;             /* Aligné en haut */
+  left: 0;            /* Aligné à gauche */
+  width: 100%;
+  padding: 20px;
+  z-index: 10;        /* Reste bien au-dessus de la vidéo */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--c-nav-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: inline-block;
+  padding: 5px 0;
+}
+
+.nav-links li a:hover {
+  color: var(--c-text);
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--c-text);
+  transform: scaleX(0);
+  transform-origin: bottom center;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.nav-links li a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links li a:has(.logo)::after {
+  display: none;
+}
+
+.nav-links .logo {
+  transition: transform 0.3s ease;
+}
+.nav-links .logo:hover {
+  transform: scale(1.15);
+}
+
+.nav-dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--c-white);
+  border-radius: 50%;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+/* HERO */
+.hero-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--c-nav-bg); 
+  position: relative; 
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: 1;
+}
+
+.hero-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 27, 75, 0.6); 
+  z-index: 2;
+}
+
+.hero {
+  position: relative;
+  z-index: 3;
+  text-align: left;
+  color: var(--c-white);
+  margin-left: 70px;
+}
+
+.hero-title {
+  font-size: 9rem;
+  font-family: ClashDisplay-Bold;
+}
+
+.hero-sub {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin-top: 35px;
+  margin-left: 20px;
+}
+
+.socials img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.project-page {
+    background-color: #102757;
+    width: 100%;
+    min-height: 91vh;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-Bold';
+  src: url('assets/fonts/ClashDisplay-Bold.woff2') format('woff2'),
+       url('assets/fonts/ClashDisplay-Bold.woff') format('woff'),
+       url('assets/fonts/ClashDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
