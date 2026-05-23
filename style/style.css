@@ -23,12 +23,41 @@ body {
 /* NAVBAR */
 
 nav {
-  position: absolute; /* Modifié pour fixer la nav tout en haut */
-  top: 0;             /* Aligné en haut */
-  left: 0;            /* Aligné à gauche */
+  position: absolute; 
+  top: 0;             
+  left: 0;            
   width: 100%;
-  padding: 20px;
-  z-index: 10;        /* Reste bien au-dessus de la vidéo */
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100%); opacity: 0; }
+}
+
+nav.scrolled {
+  position: fixed;
+  animation: slideDown 0.4s ease-out forwards;
+  background-color: rgba(16, 39, 87, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+nav.scrolled-up {
+  position: fixed;
+  animation: slideUp 0.3s ease-in forwards;
+  background-color: rgba(16, 39, 87, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links {
@@ -45,7 +74,10 @@ nav {
   font-weight: 500;
   transition: color 0.3s ease;
   display: inline-block;
-  padding: 5px 0;
+}
+
+.link {
+    font-size: 20px;
 }
 
 .nav-links li a:hover {
@@ -64,7 +96,6 @@ nav {
   transform-origin: bottom center;
   transition: transform 0.3s ease-in-out;
 }
-
 
 .nav-links li a:hover::after {
   transform: scaleX(1);
@@ -167,9 +198,9 @@ nav {
 
 @font-face {
   font-family: 'ClashDisplay-Bold';
-  src: url('assets/fonts/ClashDisplay-Bold.woff2') format('woff2'),
-       url('assets/fonts/ClashDisplay-Bold.woff') format('woff'),
-       url('assets/fonts/ClashDisplay-Bold.ttf') format('truetype');
+  src: url('../assets/fonts/ClashDisplay-Bold.woff2') format('woff2'),
+       url('../assets/fonts/ClashDisplay-Bold.woff') format('woff'),
+       url('../assets/fonts/ClashDisplay-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
   font-style: normal;
