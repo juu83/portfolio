@@ -12,7 +12,7 @@
     <main>
         <div class="hero-page">
             <video autoplay loop muted playsinline class="hero-video">
-                <source src="assets/videos/hero-background.mp4" type="video/mp4">
+                <source src="./assets/videos/hero-background.mp4" type="video/mp4">
             </video>
             <nav>
                 <ul class="nav-links">
@@ -24,7 +24,7 @@
                     <li>
                         <div class="nav-dot"></div>
                     </li>
-                    <li><a href="#"><img class="logo" src="assets/img/logo-jd.png" alt="Logo Julie DOUBRE" /></a></li>
+                    <li><a href="#"><img class="logo" src="./assets/img/logo-jd.png" alt="Logo Julie DOUBRE" /></a></li>
                     <li>
                         <div class="nav-dot"></div>
                     </li>
@@ -43,17 +43,17 @@
                 <ul class="socials">
                     <li>
                         <a href="https://www.linkedin.com/in/julie-doubre-8bb94234a/">
-                            <img src="assets/img/linkedin-svgrepo-com.svg" alt="LinkedIn">
+                            <img src="./assets/img/linkedin-svgrepo-com.svg" alt="LinkedIn">
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/juu83">
-                            <img src="assets/img/github-svgrepo-com.svg" alt="GitHub">
+                            <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub">
                         </a>
                     </li>
                     <li>
-                        <a href="assets/img/cv-julie-doubre.pdf" download="">
-                            <img src="assets/img/square-cv-svgrepo-com.svg" alt="Mon CV">
+                        <a href="./assets/img/cv-julie-doubre.pdf" download="">
+                            <img src="./assets/img/square-cv-svgrepo-com.svg" alt="Mon CV">
                         </a>
                     </li>
                 </ul>
@@ -160,7 +160,7 @@
                                 <span>CNN</span>
                             </div>
                             <a href="https://github.com/juu83" target="_blank" class="github-link">
-                                <img src="assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
+                                <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
                             </a>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
                                 <span>Pandas</span>
                             </div>
                             <a href="https://github.com/juu83" target="_blank" class="github-link">
-                                <img src="assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
+                                <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
                             </a>
                         </div>
                     </div>
@@ -194,7 +194,7 @@
                                 <span>NLP</span>
                             </div>
                             <a href="https://github.com/juu83" target="_blank" class="github-link">
-                                <img src="assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
+                                <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
                             </a>
                         </div>
                     </div>
@@ -211,7 +211,7 @@
                                 <span>DataViz</span>
                             </div>
                             <a href="https://github.com/juu83" target="_blank" class="github-link">
-                                <img src="assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
+                                <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
                             </a>
                         </div>
                     </div>
@@ -245,7 +245,7 @@
                     <button type="submit" class="submit-btn">Envoyer le message</button>
                 </form>
             </div>
-            <div class="me"><img src="/assets/img/persona.png" alt="drawing me"></div>
+            <div class="me"><img src="./assets/img/persona.png" alt="drawing me"></div>
         </div>
         <footer>© 2026 Julie Doubre. Tous droits réservés</footer>
     </main>
@@ -319,7 +319,7 @@
             logos.forEach(l => {
                 const item = document.createElement('div');
                 item.className = 'logo-item';
-                item.innerHTML = `<img src="${l.src}" alt="${l.alt}" style="height: ${l.height || '45px'}">`;;
+                item.innerHTML = `<img src="./${l.src}" alt="${l.alt}" style="height: ${l.height || '45px'}">`;;
                 track.appendChild(item);
             });
         }

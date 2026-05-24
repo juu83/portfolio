@@ -273,7 +273,7 @@ nav.scrolled-up {
     }
 
     .travail {
-        background-image: url('/assets/img/travail.png');
+        background-image: url('./assets/img/travail.png');
         display: inline-block; 
         width: 18px;
         height: 18px;
@@ -284,7 +284,7 @@ nav.scrolled-up {
     }
 
     .ecole {
-        background-image: url('/assets/img/ecole.png');
+        background-image: url('./assets/img/ecole.png');
         display: inline-block; 
         width: 20px;
         height: 20px;
