@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julie DOUBRE - Portfolio</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
     <main>
         <div class="hero-page">
@@ -14,31 +16,166 @@
             </video>
             <nav>
                 <ul class="nav-links">
-                    <li><a class="link" href="#">À propos</a></li>
-                    <li><div class="nav-dot"></div></li>
-                    <li><a class="link" href="#">Projets</a></li>
-                    <li><div class="nav-dot"></div></li>
-                    <li><a href="#"><img class="logo" src="assets/img/logo.png" alt="Logo" /></a></li>
-                    <li><div class="nav-dot"></div></li>
-                    <li><a class="link" href="#">Compétences</a></li>
-                    <li><div class="nav-dot"></div></li>
-                    <li><a class="link" href="#">Contact</a></li>
+                    <li><a href="#">Compétences</a></li>
+                    <li>
+                        <div class="nav-dot"></div>
+                    </li>
+                    <li><a href="#">Parcours</a></li>
+                    <li>
+                        <div class="nav-dot"></div>
+                    </li>
+                    <li><a href="#"><img class="logo" src="assets/img/logo.png" alt="Logo Julie DOUBRE" /></a></li>
+                    <li>
+                        <div class="nav-dot"></div>
+                    </li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li>
+                        <div class="nav-dot"></div>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <section class="hero">
                 <h1 class="hero-title">Julie Doubre</h1>
                 <p class="hero-sub">Future étudiante ingénieure à CPE Lyon, consciencieuse et investie,</p>
                 <p class="hero-sub">je souhaite travailler dans le domaine de la Data et de l'IA</p>
+
                 <ul class="socials">
-                    <li><a href="https://github.com/juu83"><img src="assets/img/github-svgrepo-com.svg" alt="GitHub"></a></li>
-                    <li><a href="https://www.linkedin.com/in/julie-doubre-8bb94234a/"><img src="assets/img/linkedin-svgrepo-com.svg" alt="LinkedIn"></a></li>
-                    <li><a href="assets/img/cv-julie-doubre.pdf" download><img src="assets/img/square-cv-svgrepo-com.svg" alt="CV"></a></li>
+                    <li>
+                        <a href="https://github.com/juu83">
+                            <img src="assets/img/github-svgrepo-com.svg" alt="GitHub">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/julie-doubre-8bb94234a/">
+                            <img src="assets/img/linkedin-svgrepo-com.svg" alt="LinkedIn">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="assets/img/cv-julie-doubre.pdf" download="">
+                            <img src="assets/img/square-cv-svgrepo-com.svg" alt="Mon CV">
+                        </a>
+                    </li>
                 </ul>
             </section>
         </div>
-        <div class="project-page"><p>un projet</p></div>
+        <div class="competences-page"></div>
+        <div class="parcours-page"></div>
+
+        <div class="project-page" id="projets">
+            <h2 class="project-section-title">Mes Projets</h2>
+
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Projet précédent">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                    </svg>
+                </button>
+
+                <div class="carousel-track">
+                    <div class="project-card">
+                        <div class="card-preview" style="background-image: url('https://placehold.co/600x400');"></div>
+                        <div class="card-content">
+                            <h3>Classification d'images Médicales</h3>
+                            <p>Développement d'un modèle de Deep Learning capable de classifier des pathologies
+                                pulmonaires à partir de radiographies.</p>
+                            <div class="card-tags">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>CNN</span>
+                            </div>
+                            <a href="https://github.com/juu83" target="_blank" class="github-link">
+                                <img src="assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-preview" style="background-image: url('https://placehold.co/600x400');"></div>
+                        <div class="card-content">
+                            <h3>Analyse Prédictive de Ventes</h3>
+                            <p>Modélisation et prédiction de séries temporelles complexes pour optimiser les stocks
+                                d'une chaîne logistique de distribution.</p>
+                            <div class="card-tags">
+                                <span>Python</span>
+                                <span>Scikit-Learn</span>
+                                <span>Pandas</span>
+                            </div>
+                            <a href="https://github.com/juu83" target="_blank" class="github-link">
+                                <img src="assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-preview" style="background-image: url('https://placehold.co/600x400');"></div>
+                        <div class="card-content">
+                            <h3>Assistant NLP Intelligent</h3>
+                            <p>Conception d'un agent conversationnel basé sur l'architecture Transformer pour analyser
+                                la sémantique de documents techniques.</p>
+                            <div class="card-tags">
+                                <span>PyTorch</span>
+                                <span>HuggingFace</span>
+                                <span>NLP</span>
+                            </div>
+                            <a href="https://github.com/juu83" target="_blank" class="github-link">
+                                <img src="assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-preview" style="background-image: url('https://placehold.co/600x400');"></div>
+                        <div class="card-content">
+                            <h3>Dashboard Environnemental</h3>
+                            <p>Création d'une application de visualisation interactive centralisant les indicateurs
+                                climatiques européens clés en temps réel.</p>
+                            <div class="card-tags">
+                                <span>R</span>
+                                <span>Shiny</span>
+                                <span>DataViz</span>
+                            </div>
+                            <a href="https://github.com/juu83" target="_blank" class="github-link">
+                                <img src="assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" aria-label="Projet suivant">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="contact-page" id="contact">
+            <div class="contact-container">
+                <h2>Contactez-moi</h2>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Sujet de votre message">
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Votre message..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+        <footer>© 2026 Julie Doubre. Tous droits réservés</footer>
     </main>
+
     <script>
+        // --- Gestion de la Sticky Navigation ---
         const nav = document.querySelector('nav');
         let lastScroll = 0;
 
@@ -56,6 +193,42 @@
             }
             lastScroll = currentScroll;
         });
+
+        // --- Gestion du Carrousel de Projets 3 par 3 ---
+        const cards = document.querySelectorAll('.project-card');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            cards.forEach((card, index) => {
+                card.classList.remove('card-left', 'card-center', 'card-right', 'card-hidden');
+
+                if (index === currentIndex) {
+                    card.classList.add('card-center');
+                } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
+                    card.classList.add('card-left');
+                } else if (index === (currentIndex + 1) % cards.length) {
+                    card.classList.add('card-right');
+                } else {
+                    card.classList.add('card-hidden');
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateCarousel();
+        });
+
+        updateCarousel();
+
     </script>
 </body>
+
 </html>
