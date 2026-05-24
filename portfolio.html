@@ -60,7 +60,11 @@
             </section>
         </div>
         <div class="competences-page"></div>
-        <div class="parcours-page"></div>
+        <div class="parcours-page">
+            <div class="ticker-wrap">
+                <div class="ticker-track" id="track"></div>
+            </div>
+        </div>
 
         <div class="project-page" id="projets">
             <h2 class="project-section-title">Mes Projets</h2>
@@ -228,6 +232,25 @@
 
         updateCarousel();
 
+        const logos = [
+            { src: '/assets/img/iut-nca.png', alt: 'Logo 1', height: '90px' },
+            { src: '/assets/img/lamut.png', alt: 'Logo 2' },
+            { src: '/assets/img/dgfip.png', alt: 'Logo 3' },
+            { src: '/assets/img/cpe-lyon.png', alt: 'Logo 4' },
+            { src: '/assets/img/bpce-it.png', alt: 'Logo 5' },
+        ];
+
+        const track = document.getElementById('track');
+
+        // On répète 6 fois pour éviter tout trou
+        for (let s = 0; s < 6; s++) {
+            logos.forEach(l => {
+                const item = document.createElement('div');
+                item.className = 'logo-item';
+                item.innerHTML = `<img src="${l.src}" alt="${l.alt}" style="height: ${l.height || '45px'}">`;;
+                track.appendChild(item);
+            });
+        }
     </script>
 </body>
 
