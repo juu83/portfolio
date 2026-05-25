@@ -1021,7 +1021,7 @@ html {
     
     .nav-links {
         position: fixed;
-        top: -100%; 
+        top: -120vh; 
         left: 0; 
         width: 100vw; 
         height: 100vh;
