@@ -928,3 +928,51 @@ footer {
   font-display: swap;
   font-style: normal;
 }
+
+/* =======================================================================
+   ANIMATIONS 3D, SCROLL FLUIDE ET FLOTTAISON
+======================================================================= */
+
+/* 1. Scroll fluide pour toute la page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Classes pour l'apparition douce au défilement (Scroll Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px); /* L'élément part d'un peu plus bas */
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, visibility;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Effet de flottaison continue (pour les icônes et le dessin "me") */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); } /* Monte de 15px */
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* Application de la flottaison au dessin de la page contact */
+.me img {
+    width: 816px;
+    height: 612px;
+    animation: floating 6s ease-in-out infinite; /* Plus lent pour plus de naturel */
+}
+
+/* Amélioration de l'icône de compétence pour qu'elle flotte dans la carte */
+.comp-icon {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    animation: floating 3s ease-in-out infinite; 
+}

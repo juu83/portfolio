@@ -230,3 +230,58 @@ if (contactForm) {
         }
     });
 }
+
+// =======================================================================
+// 6. ANIMATIONS AU SCROLL (REVEAL)
+// =======================================================================
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Optionnel : décommenter la ligne ci-dessous si tu veux que l'animation ne se joue qu'une seule fois
+            // observer.unobserve(entry.target); 
+        } else {
+            // Optionnel : Enlève la classe si tu veux que ça se re-cache en remontant
+            entry.target.classList.remove('active');
+        }
+    });
+}, {
+    root: null,
+    threshold: 0.15, // L'élément apparait quand 15% de sa hauteur est visible à l'écran
+    rootMargin: "0px 0px -50px 0px"
+});
+
+revealElements.forEach(el => {
+    revealObserver.observe(el);
+});
+
+// =======================================================================
+// 7. EFFET 3D "TILT" SUR LES CARTES DE COMPÉTENCES
+// =======================================================================
+const tiltCards = document.querySelectorAll('.comp-card');
+
+tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left; // Position X de la souris dans la carte
+        const y = e.clientY - rect.top;  // Position Y de la souris dans la carte
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Calcule la rotation (max 15 degrés) pour donner l'effet 3D
+        const rotateX = ((y - centerY) / centerY) * -15;
+        const rotateY = ((x - centerX) / centerX) * 15;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        card.style.transition = 'transform 0.1s ease-out'; // Rend le mouvement fluide accroché à la souris
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        // Retour à la normale quand la souris quitte la carte avec un effet rebond
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+        card.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+});
