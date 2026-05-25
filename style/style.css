@@ -253,6 +253,11 @@ nav.scrolled-up {
     margin-bottom: 10px;
 }
 
+.comp-icon img {
+    height: 70px;
+    width: 70px;
+}
+
 .comp-card h3 {
     color: var(--c-white);
     font-family: 'DM Sans', sans-serif;
@@ -418,7 +423,7 @@ nav.scrolled-up {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
-      padding: 1.5rem 0;
+      padding: 3rem 0;
       margin-left: 40px;
     }
 
@@ -767,7 +772,7 @@ nav.scrolled-up {
     color: var(--c-white); 
     font-family: 'ClashDisplay-Bold', sans-serif;
     font-size: 3rem;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     text-align: left;
 }
 

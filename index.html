@@ -64,23 +64,35 @@
 
             <div class="comp-grid">
                 <div class="comp-card" data-category="dev">
-                    <div class="comp-icon">💻</div>
+                    <div class="comp-icon"><img src="./assets/img/dev.png" alt=""></div>
                     <h3>Développement Web & Logiciel</h3>
                 </div>
                 <div class="comp-card" data-category="data">
-                    <div class="comp-icon">📊</div>
-                    <h3>Data & IA</h3>
+                    <div class="comp-icon"><img src="./assets/img/bdd.png" alt=""></div>
+                    <h3>Base de données</h3>
                 </div>
                 <div class="comp-card" data-category="sysres">
-                    <div class="comp-icon">🌐</div>
+                    <div class="comp-icon"><img src="./assets/img/network.png" alt=""></div>
                     <h3>Systèmes & Réseaux</h3>
                 </div>
+                <div class="comp-card" data-category="qualite">
+                    <div class="comp-icon"><img src="./assets/img/quality.png" alt=""></div>
+                    <h3>Qualité de developpement</h3>
+                </div>
+                <div class="comp-card" data-category="gestion">
+                    <div class="comp-icon"><img src="./assets/img/management.png" alt=""></div>
+                    <h3>Gestion de projets</h3>
+                </div>
+                <div class="comp-card" data-category="certification">
+                    <div class="comp-icon"><img src="./assets/img/certification.png" alt=""></div>
+                    <h3>Certification</h3>
+                </div>
                 <div class="comp-card" data-category="langues">
-                    <div class="comp-icon">🌍</div>
+                    <div class="comp-icon"><img src="./assets/img/langues.png" alt=""></div>
                     <h3>Langues</h3>
                 </div>
                 <div class="comp-card" data-category="soft">
-                    <div class="comp-icon">🤝</div>
+                    <div class="comp-icon"><img src="./assets/img/softskills.png" alt=""></div>
                     <h3>Soft Skills</h3>
                 </div>
             </div>
@@ -193,6 +205,9 @@
                                 <span>Next.js</span>
                                 <span>Laravel - PHP</span>
                                 <span>Vue.js</span>
+                                <span>WSL</span>
+                                <span>Docker</span>
+                                <span>Android Studio</span>
                             </div>
                             <a href="https://github.com/juu83/buystalk" target="_blank" class="github-link">
                                 <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
@@ -210,6 +225,7 @@
                                 <span>HTML</span>
                                 <span>CSS</span>
                                 <span>Javascript</span>
+                                <span>IbisPaint</span>
                             </div>
                             <a href="https://github.com/juu83/portfolio" target="_blank" class="github-link">
                                 <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
@@ -218,17 +234,20 @@
                     </div>
 
                     <div class="project-card">
-                        <div class="card-preview" style="background-image: url('https://placehold.co/600x400');"></div>
+                        <div class="card-preview" style="background-image: url('./assets/img/allroads.png');"></div>
                         <div class="card-content">
-                            <h3>Assistant NLP Intelligent</h3>
-                            <p>Conception d'un agent conversationnel basé sur l'architecture Transformer pour analyser
-                                la sémantique de documents techniques.</p>
+                            <h3>AllRoads - Projet universitaire en groupe</h3>
+                            <p>Conception et réalisation d'un MVP innovant sur les problématiques de
+                            transports sur la zone Nice - Sophia Antipolis ainsi quee toute la stratégie
+                            de communication</p>
                             <div class="card-tags">
-                                <span>PyTorch</span>
-                                <span>HuggingFace</span>
-                                <span>NLP</span>
+                                <span>Canva</span>
+                                <span>MySQL</span>
+                                <span>phpMyAdmin</span>
+                                <span>Node.js</span>
+                                <span>Docker</span>
                             </div>
-                            <a href="https://github.com/juu83" target="_blank" class="github-link">
+                            <a href="https://github.com/Picsou06/allroads-backend" target="_blank" class="github-link">
                                 <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
                             </a>
                         </div>
@@ -237,13 +256,16 @@
                     <div class="project-card">
                         <div class="card-preview" style="background-image: url('https://placehold.co/600x400');"></div>
                         <div class="card-content">
-                            <h3>Dashboard Environnemental</h3>
-                            <p>Création d'une application de visualisation interactive centralisant les indicateurs
-                                climatiques européens clés en temps réel.</p>
+                            <h3>Dashboard Logs VM</h3>
+                            <p>Petit labo permettant d'exploiter les logs d'une VM
+                            afin de les visualiser dans un dashboard 
+                            </p>
                             <div class="card-tags">
-                                <span>R</span>
-                                <span>Shiny</span>
-                                <span>DataViz</span>
+                                <span>VirtualBox</span>
+                                <span>Filebeat</span>
+                                <span>ElasticSearch</span>
+                                <span>LogStash</span>
+                                <span>Kibana</span>
                             </div>
                             <a href="https://github.com/juu83" target="_blank" class="github-link">
                                 <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
@@ -363,23 +385,35 @@
         const skillsData = {
             dev: {
                 title: "Développement Web & Logiciel",
-                skills: ["Python", "Java", "HTML / CSS / JavaScript", "React / Node.js", "Git & GitHub"]
+                skills: ["Python", "Java", "C", "HTML / CSS / JavaScript / Bootstrap", "React / Node.js", "Next.js / Vue.js"]
             },
             data: {
-                title: "Data & IA",
-                skills: ["Bases de données SQL (PostgreSQL)", "Pandas / NumPy / Scikit-Learn", "Machine Learning & Deep Learning", "Analyse de séries temporelles"]
+                title: "Base de données",
+                skills: ["MySQL - phpMyAdmin", "PostgreSQL - pgAdmin", "Notion de MariaDB/InfluxDB", "Notions de NoSQL (hstore/Stack ELK)"]
             },
             sysres: {
                 title: "Systèmes & Réseaux",
-                skills: ["Administration Linux / Windows", "Routage & Switching", "Scripting (Python, Bash)", "Support utilisateur (GLPI)"]
+                skills: ["Virtualisation (Ubuntu / Debian / Proxmox)", "Routage & Switching (Cisco PacketTracer)", "Analyse traffic Web (WireShark)", "Scripting (Python, Bash)", "Support utilisateur (GLPI)"]
+            },
+            qualite: {
+                title: "Qualité de developpement",
+                skills: ["Git", "Docker", "Maven", "SpringBoot","Tests Junit5","Mock Java", "Notions de Pipeline CI/CD"]
+            },
+            gestion: {
+                title: "Gestion de projet",
+                skills: ["Diagramme de Gantt", "Méthodes AGILES", "Méthodes PERT", "Rédaction de documentations techniques", "Conception maquettes Figma"]
+            },
+            certification: {
+                title: "Certifications",
+                skills: ["MOOC SecNumAcadémie ANSSI", "Permis B"]
             },
             langues: {
                 title: "Langues",
-                skills: ["Français (Maternel)", "Anglais (Niveau B2)", "Espagnol (Niveau A2)"]
+                skills: ["Français (Maternel)", "Anglais (Niveau B2)", "Espagnol (Niveau B1)"]
             },
             soft: {
                 title: "Soft Skills",
-                skills: ["Travail en équipe", "Rigueur et organisation", "Curiosité intellectuelle", "Adaptabilité", "Résolution de problèmes complexes"]
+                skills: ["Travail en équipe", "Rigueur et organisation", "Investissement et adaptabilité", "Créativité", "Empathie et bienveillance"]
             }
         };
 
