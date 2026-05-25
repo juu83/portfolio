@@ -240,16 +240,14 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            // Optionnel : décommenter la ligne ci-dessous si tu veux que l'animation ne se joue qu'une seule fois
-            // observer.unobserve(entry.target); 
+            observer.unobserve(entry.target); 
         } else {
-            // Optionnel : Enlève la classe si tu veux que ça se re-cache en remontant
             entry.target.classList.remove('active');
         }
     });
 }, {
     root: null,
-    threshold: 0.15, // L'élément apparait quand 15% de sa hauteur est visible à l'écran
+    threshold: 0.15,
     rootMargin: "0px 0px -50px 0px"
 });
 
@@ -276,12 +274,34 @@ tiltCards.forEach(card => {
         const rotateY = ((x - centerX) / centerX) * 15;
         
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-        card.style.transition = 'transform 0.1s ease-out'; // Rend le mouvement fluide accroché à la souris
+        card.style.transition = 'transform 0.1s ease-out';
     });
     
     card.addEventListener('mouseleave', () => {
-        // Retour à la normale quand la souris quitte la carte avec un effet rebond
         card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
         card.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
     });
 });
+
+// =======================================================================
+// 8. MENU HAMBURGER (RESPONSIVE MOBILE)
+// =======================================================================
+const hamburger = document.getElementById('hamburger');
+const navLinksUl = document.getElementById('nav-links');
+const navItems = document.querySelectorAll('.nav-links li a');
+
+if (hamburger && navLinksUl) {
+    // Ouvre / Ferme le menu au clic sur le hamburger
+    hamburger.addEventListener('click', () => {
+        navLinksUl.classList.toggle('active');
+        hamburger.classList.toggle('toggle'); // Active l'animation de la croix
+    });
+
+    // Ferme le menu automatiquement quand on clique sur un lien
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinksUl.classList.remove('active');
+            hamburger.classList.remove('toggle');
+        });
+    });
+}
