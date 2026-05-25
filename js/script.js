@@ -294,7 +294,7 @@ if (hamburger && navLinksUl) {
     // Ouvre / Ferme le menu au clic sur le hamburger
     hamburger.addEventListener('click', () => {
         navLinksUl.classList.toggle('active');
-        hamburger.classList.toggle('toggle'); // Active l'animation de la croix
+        hamburger.classList.toggle('toggle'); 
     });
 
     // Ferme le menu automatiquement quand on clique sur un lien

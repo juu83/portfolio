@@ -1021,8 +1021,8 @@ html {
     
     .nav-links {
         position: fixed;
-        top: 0; 
-        left: -100%; 
+        top: -100%; 
+        left: 0; 
         width: 100vw; 
         height: 100vh;
         background-color: rgba(16, 39, 87, 0.98); 
@@ -1032,14 +1032,14 @@ html {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         z-index: 9998;
         gap: 30px;
         margin: 0;
         padding: 0;
     }
     
-    .nav-links.active { left: 0; } 
+    .nav-links.active { top: 0; } 
     .nav-dot { display: none; } 
     .link { font-size: 24px; }
     .logo { width: 80px; height: 80px; }
