@@ -361,13 +361,52 @@ nav.scrolled-up {
 }
 
 .parcours-page {
-    background-image: 
-        /* url('/assets/img/grid.png'), */
+    position: relative;
+    background-image:
         linear-gradient(rgb(255, 255, 255), rgb(228, 234, 255));
-    background-size: cover;
-    background-position: center;
+    background-size:
+        100% 50%,
+        cover;
+    background-position:
+        bottom,
+        center;
+    background-repeat:
+        no-repeat,
+        no-repeat;
     width: 100%;
-    min-height: 91vh;
+    min-height: 95vh;
+}
+
+.grid {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  width: 200%;
+  height: 60%;
+
+  transform:
+    translateX(-50%)
+    perspective(500px)
+    rotateX(75deg);
+
+  background-image:
+    linear-gradient(
+      rgba(10, 25, 60, 0.35) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(10, 25, 60, 0.35) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 40px;
+  box-shadow: 0 0 20px rgba(10, 25, 60, 0.2);
+  mask-image: linear-gradient(
+    to top,
+    rgba(0,0,0,1),
+    rgba(0,0,0,0)
+  );
 }
 
 .ticker-wrap {
@@ -425,6 +464,7 @@ nav.scrolled-up {
       gap: 2rem;
       padding: 3rem 0;
       margin-left: 40px;
+      padding-bottom: 300px;
     }
 
     .section-title {
@@ -563,7 +603,7 @@ nav.scrolled-up {
 .project-section-title {
     color: white;
     font-family: 'ClashDisplay-Bold', sans-serif;
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 60px;
     text-align: left;
 }
