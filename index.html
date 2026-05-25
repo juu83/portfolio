@@ -59,7 +59,41 @@
                 </ul>
             </section>
         </div>
-        <div class="competences-page" id="competences"></div>
+        <div class="competences-page" id="competences">
+            <h2 class="section-title-comp">Mes Compétences</h2>
+
+            <div class="comp-grid">
+                <div class="comp-card" data-category="dev">
+                    <div class="comp-icon">💻</div>
+                    <h3>Développement Web & Logiciel</h3>
+                </div>
+                <div class="comp-card" data-category="data">
+                    <div class="comp-icon">📊</div>
+                    <h3>Data & IA</h3>
+                </div>
+                <div class="comp-card" data-category="sysres">
+                    <div class="comp-icon">🌐</div>
+                    <h3>Systèmes & Réseaux</h3>
+                </div>
+                <div class="comp-card" data-category="langues">
+                    <div class="comp-icon">🌍</div>
+                    <h3>Langues</h3>
+                </div>
+                <div class="comp-card" data-category="soft">
+                    <div class="comp-icon">🤝</div>
+                    <h3>Soft Skills</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal-content">
+                <button class="close-modal" aria-label="Fermer la fenêtre">&times;</button>
+                <h3 id="modal-title">Titre de la catégorie</h3>
+                <div id="modal-body" class="modal-body">
+                </div>
+            </div>
+        </div>
         <div class="parcours-page" id="parcours">
             <div class="ticker-wrap">
                 <div class="ticker-track" id="track"></div>
@@ -149,34 +183,35 @@
 
                 <div class="carousel-track">
                     <div class="project-card">
-                        <div class="card-preview" style="background-image: url('https://placehold.co/600x400');"></div>
+                        <div class="card-preview" style="background-image: url('./assets/img/buystalk.png')"></div>
                         <div class="card-content">
-                            <h3>Classification d'images Médicales</h3>
-                            <p>Développement d'un modèle de Deep Learning capable de classifier des pathologies
-                                pulmonaires à partir de radiographies.</p>
+                            <h3>BuyStalk - Projet universitaire</h3>
+                            <p>Développement d'un modèle d'application mobile basé sur
+                                des fonctionnalités de site e-commerce et réseau social
+                            </p>
                             <div class="card-tags">
-                                <span>Python</span>
-                                <span>TensorFlow</span>
-                                <span>CNN</span>
+                                <span>Next.js</span>
+                                <span>Laravel - PHP</span>
+                                <span>Vue.js</span>
                             </div>
-                            <a href="https://github.com/juu83" target="_blank" class="github-link">
+                            <a href="https://github.com/juu83/buystalk" target="_blank" class="github-link">
                                 <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
                             </a>
                         </div>
                     </div>
 
                     <div class="project-card">
-                        <div class="card-preview" style="background-image: url('https://placehold.co/600x400');"></div>
+                        <div class="card-preview" style="background-image: url('./assets/img/portfolio.png');"></div>
                         <div class="card-content">
-                            <h3>Analyse Prédictive de Ventes</h3>
-                            <p>Modélisation et prédiction de séries temporelles complexes pour optimiser les stocks
-                                d'une chaîne logistique de distribution.</p>
+                            <h3>Portfolio personnelle</h3>
+                            <p>Création de mon site portfolio permettant d'exposer mes compétences
+                                et projets de façon originale et créative</p>
                             <div class="card-tags">
-                                <span>Python</span>
-                                <span>Scikit-Learn</span>
-                                <span>Pandas</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>Javascript</span>
                             </div>
-                            <a href="https://github.com/juu83" target="_blank" class="github-link">
+                            <a href="https://github.com/juu83/portfolio" target="_blank" class="github-link">
                                 <img src="./assets/img/github-svgrepo-com.svg" alt="GitHub"> Voir sur GitHub
                             </a>
                         </div>
@@ -323,6 +358,71 @@
                 track.appendChild(item);
             });
         }
+        // --- Gestion des Compétences (Modale) ---
+
+        const skillsData = {
+            dev: {
+                title: "Développement Web & Logiciel",
+                skills: ["Python", "Java", "HTML / CSS / JavaScript", "React / Node.js", "Git & GitHub"]
+            },
+            data: {
+                title: "Data & IA",
+                skills: ["Bases de données SQL (PostgreSQL)", "Pandas / NumPy / Scikit-Learn", "Machine Learning & Deep Learning", "Analyse de séries temporelles"]
+            },
+            sysres: {
+                title: "Systèmes & Réseaux",
+                skills: ["Administration Linux / Windows", "Routage & Switching", "Scripting (Python, Bash)", "Support utilisateur (GLPI)"]
+            },
+            langues: {
+                title: "Langues",
+                skills: ["Français (Maternel)", "Anglais (Niveau B2)", "Espagnol (Niveau A2)"]
+            },
+            soft: {
+                title: "Soft Skills",
+                skills: ["Travail en équipe", "Rigueur et organisation", "Curiosité intellectuelle", "Adaptabilité", "Résolution de problèmes complexes"]
+            }
+        };
+
+        const compCards = document.querySelectorAll('.comp-card');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeModalBtn = document.querySelector('.close-modal');
+
+        function openModal(category) {
+            const data = skillsData[category];
+            if (data) {
+                modalTitle.textContent = data.title;
+                const ul = document.createElement('ul');
+                data.skills.forEach(skill => {
+                    const li = document.createElement('li');
+                    li.textContent = skill;
+                    ul.appendChild(li);
+                });
+
+                modalBody.innerHTML = '';
+                modalBody.appendChild(ul);
+                modalOverlay.classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+        }
+
+        compCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.getAttribute('data-category');
+                openModal(category);
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
     </script>
 </body>
 
