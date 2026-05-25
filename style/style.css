@@ -468,7 +468,7 @@ nav.scrolled-up {
     }
 
     .section-title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 600;
       letter-spacing: .08em;
       text-transform: uppercase;
@@ -539,25 +539,25 @@ nav.scrolled-up {
       margin-bottom: 3px;
     }
     .tl-title {
-      font-size: 25px;
+      font-size: 28px;
       margin-bottom: 2px;
       color: #3C3489;
       font-family: ClashDisplay-Bold;
     }
     .tl-org {
-      font-size: 15px;
+      font-size: 18px;
       color: #271f6b;
       margin-bottom: 6px;
     }
     .tl-desc {
-      font-size: 14px;
+      font-size: 16px;
       color: #555;
       line-height: 1.6;
     }
 
     .badge-next {
       display: inline-block;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 600;
       padding: 2px 7px;
       border-radius: 99px;
@@ -569,7 +569,7 @@ nav.scrolled-up {
 
     .badge-alt {
       display: inline-block;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 600;
       padding: 2px 7px;
       border-radius: 99px;
@@ -710,7 +710,7 @@ nav.scrolled-up {
     color: var(--c-white);
     font-size: 1.6rem;
     margin-bottom: 12px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'ClashDisplay-Medium';
     font-weight: 500;
 }
 
@@ -915,6 +915,16 @@ footer {
        url('../assets/fonts/ClashDisplay-Bold.woff') format('woff'),
        url('../assets/fonts/ClashDisplay-Bold.ttf') format('truetype');
   font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-Medium';
+  src: url('../assets/fonts/ClashDisplay-Medium.woff2') format('woff2'),
+       url('../assets/fonts/ClashDisplay-Medium.woff') format('woff'),
+       url('../assets/fonts/ClashDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
