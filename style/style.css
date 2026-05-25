@@ -197,9 +197,9 @@ nav.scrolled-up {
 
 /* ─── SECTION COMPÉTENCES ─── */
 .competences-page {
-    background-color: rgb(20, 7, 88); 
+    background-color: #102757; 
     width: 100%;
-    min-height: 91vh;
+    min-height: 95vh;
     padding: 100px 10%;
     display: flex;
     flex-direction: column;
@@ -362,7 +362,7 @@ nav.scrolled-up {
 
 .parcours-page {
     background-image: 
-        url('/assets/img/grid.png'),
+        /* url('/assets/img/grid.png'), */
         linear-gradient(rgb(255, 255, 255), rgb(228, 234, 255));
     background-size: cover;
     background-position: center;
@@ -524,6 +524,7 @@ nav.scrolled-up {
       margin-bottom: 6px;
       background: #EEEDFE;
       color: #3C3489;
+      border: solid 1px #3C3489;
     }
 
     .badge-alt {
@@ -535,6 +536,7 @@ nav.scrolled-up {
       margin-bottom: 6px;
       background: #edfdfe;
       color: #348089;
+      border: solid 1px #348089
     }
 
     @media (max-width: 600px) {
@@ -547,12 +549,15 @@ nav.scrolled-up {
     width: 100%;
     min-height: 100vh;
     padding: 80px 0;
+    padding-top: 270px;
+    padding-bottom: 270px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    gap: 30px;
 }
 
 .project-section-title {
@@ -585,8 +590,8 @@ nav.scrolled-up {
 /* Style de Base des Cartes */
 .project-card {
     position: absolute;
-    width: 350px;
-    height: 480px;
+    width: 480px;
+    height: 550px;
     background-color: rgba(76, 69, 130, 0.2);
     border: 1px solid rgba(242, 242, 240, 0.1);
     border-radius: 16px;
@@ -647,7 +652,7 @@ nav.scrolled-up {
 /* Éléments Internes des Cartes */
 .card-preview {
     width: 100%;
-    height: 180px;
+    height: 300px;
     background-size: cover;
     background-position: center;
     background-color: rgba(16, 39, 87, 0.5);
@@ -663,7 +668,7 @@ nav.scrolled-up {
 
 .card-content h3 {
     color: var(--c-white);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 12px;
     font-family: 'DM Sans', sans-serif;
     font-weight: 500;
@@ -671,7 +676,7 @@ nav.scrolled-up {
 
 .card-content p {
     color: rgba(242, 242, 240, 0.7);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: auto;
 }
@@ -685,7 +690,7 @@ nav.scrolled-up {
 }
 
 .card-tags span {
-    font-size: 0.8rem;
+    font-size: 0.93rem;
     padding: 4px 10px;
     border-radius: 20px;
     background-color: rgba(115, 199, 210, 0.15);
@@ -702,6 +707,7 @@ nav.scrolled-up {
     font-weight: 500;
     transition: color 0.3s ease;
     align-self: flex-start;
+    text-decoration: underline;
 }
 
 .github-link img {
@@ -749,11 +755,10 @@ nav.scrolled-up {
 
 /* --- CONTACT PAGE --- */
 .contact-page {
-    /* background-color: var(--c-nav-bg);  */
     background-image: 
         linear-gradient(rgb(16, 38, 87),rgba(16, 38, 87, 0.956),#4c4582, #4c4582);
     width: 100%;
-    min-height: 88vh;
+    min-height: 84vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;
