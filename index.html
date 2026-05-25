@@ -174,7 +174,8 @@
                             <p class="tl-desc"></p>
                             <ul>
                                 <li>
-                                    <p class="tl-desc">Accompagner les utilisateurs sur l’ingestion des données dans THEIA</p>
+                                    <p class="tl-desc">Accompagner les utilisateurs sur l’ingestion des données dans
+                                        THEIA</p>
                                 </li>
                                 <li>
                                     <p class="tl-desc">Participer au développement d’interface des outillages As A
@@ -334,7 +335,7 @@
         <div class="contact-page" id="contact">
             <div class="contact-container">
                 <h2>Contactez-moi</h2>
-                <form action="#" method="POST" class="contact-form">
+                <form action="https://formspree.io/f/mkoeqbdw" method="POST" class="contact-form">
                     <div class="input-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required placeholder="votre@email.com">
@@ -355,158 +356,7 @@
         </div>
         <footer>© 2026 Julie Doubre. Tous droits réservés</footer>
     </main>
-
-    <script>
-        // --- Gestion de la Sticky Navigation ---
-        const nav = document.querySelector('nav');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.scrollY;
-
-            if (currentScroll > 500) {
-                nav.classList.add('scrolled');
-                nav.classList.remove('scrolled-up');
-            } else if (currentScroll < 200) {
-                nav.classList.remove('scrolled', 'scrolled-up');
-            } else if (currentScroll < lastScroll && nav.classList.contains('scrolled')) {
-                nav.classList.remove('scrolled');
-                nav.classList.add('scrolled-up');
-            }
-            lastScroll = currentScroll;
-        });
-
-        // --- Gestion du Carrousel de Projets 3 par 3 ---
-        const cards = document.querySelectorAll('.project-card');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            cards.forEach((card, index) => {
-                card.classList.remove('card-left', 'card-center', 'card-right', 'card-hidden');
-
-                if (index === currentIndex) {
-                    card.classList.add('card-center');
-                } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
-                    card.classList.add('card-left');
-                } else if (index === (currentIndex + 1) % cards.length) {
-                    card.classList.add('card-right');
-                } else {
-                    card.classList.add('card-hidden');
-                }
-            });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-            updateCarousel();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % cards.length;
-            updateCarousel();
-        });
-
-        updateCarousel();
-
-        const logos = [
-            { src: '/assets/img/iut-nca.png', alt: 'Logo 1', height: '90px' },
-            { src: '/assets/img/lamut.png', alt: 'Logo 2' },
-            { src: '/assets/img/dgfip.png', alt: 'Logo 3' },
-            { src: '/assets/img/cpe-lyon.png', alt: 'Logo 4' },
-            { src: '/assets/img/bpce-it.png', alt: 'Logo 5' },
-        ];
-
-        const track = document.getElementById('track');
-
-        // On répète 6 fois pour éviter tout trou
-        for (let s = 0; s < 6; s++) {
-            logos.forEach(l => {
-                const item = document.createElement('div');
-                item.className = 'logo-item';
-                item.innerHTML = `<img src="./${l.src}" alt="${l.alt}" style="height: ${l.height || '45px'}">`;;
-                track.appendChild(item);
-            });
-        }
-        // --- Gestion des Compétences (Modale) ---
-
-        const skillsData = {
-            dev: {
-                title: "Développement Web & Logiciel",
-                skills: ["Python", "Java", "C", "HTML / CSS / JavaScript / Bootstrap", "React / Node.js", "Next.js / Vue.js"]
-            },
-            data: {
-                title: "Base de données",
-                skills: ["MySQL - phpMyAdmin", "PostgreSQL - pgAdmin", "Notion de MariaDB/InfluxDB", "Notions de NoSQL (hstore/Stack ELK)"]
-            },
-            sysres: {
-                title: "Systèmes & Réseaux",
-                skills: ["Virtualisation (Ubuntu / Debian / Proxmox)", "Routage & Switching (Cisco PacketTracer)", "Analyse traffic Web (WireShark)", "Scripting (Python, Bash)", "Support utilisateur (GLPI)"]
-            },
-            qualite: {
-                title: "Qualité de developpement",
-                skills: ["Git", "Docker", "Maven", "SpringBoot", "Tests Junit5", "Mock Java", "Notions de Pipeline CI/CD"]
-            },
-            gestion: {
-                title: "Gestion de projet",
-                skills: ["Diagramme de Gantt", "Méthodes AGILES", "Méthodes PERT", "Rédaction de documentations techniques", "Conception maquettes Figma"]
-            },
-            certification: {
-                title: "Certifications",
-                skills: ["MOOC SecNumAcadémie ANSSI", "Permis B"]
-            },
-            langues: {
-                title: "Langues",
-                skills: ["Français (Maternel)", "Anglais (Niveau B2)", "Espagnol (Niveau B1)"]
-            },
-            soft: {
-                title: "Soft Skills",
-                skills: ["Travail en équipe", "Rigueur et organisation", "Investissement et adaptabilité", "Créativité", "Empathie et bienveillance"]
-            }
-        };
-
-        const compCards = document.querySelectorAll('.comp-card');
-        const modalOverlay = document.getElementById('modal-overlay');
-        const modalTitle = document.getElementById('modal-title');
-        const modalBody = document.getElementById('modal-body');
-        const closeModalBtn = document.querySelector('.close-modal');
-
-        function openModal(category) {
-            const data = skillsData[category];
-            if (data) {
-                modalTitle.textContent = data.title;
-                const ul = document.createElement('ul');
-                data.skills.forEach(skill => {
-                    const li = document.createElement('li');
-                    li.textContent = skill;
-                    ul.appendChild(li);
-                });
-
-                modalBody.innerHTML = '';
-                modalBody.appendChild(ul);
-                modalOverlay.classList.add('active');
-            }
-        }
-
-        function closeModal() {
-            modalOverlay.classList.remove('active');
-        }
-
-        compCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const category = card.getAttribute('data-category');
-                openModal(category);
-            });
-        });
-
-        closeModalBtn.addEventListener('click', closeModal);
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                closeModal();
-            }
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
