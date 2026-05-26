@@ -484,28 +484,6 @@ nav.scrolled-up {
       margin-bottom: 1.5rem;
     }
 
-    .travail {
-        background-image: url('/assets/img/travail.png');
-        display: inline-block; 
-        width: 18px;
-        height: 18px;
-        background-size: contain; 
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-left: 10px;
-    }
-
-    .ecole {
-        background-image: url('/assets/img/ecole.png');
-        display: inline-block; 
-        width: 20px;
-        height: 20px;
-        background-size: contain; 
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-left: 10px;
-    }
-
     .timeline {
       position: relative;
       padding-left: 28px;
