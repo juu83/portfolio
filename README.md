@@ -2,6 +2,8 @@
 
 Ce dépôt contient le code source de mon portfolio personnel. Ce site web présente mon parcours professionnel, ma formation ainsi que les différents projets sur lesquels j'ai eu l'opportunité de travailler.
 
+Lien : https://juu83.github.io/portfolio/
+
 ## Technologies utilisées
 
 Ce projet est un site web statique et léger, développé sans framework :
