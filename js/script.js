@@ -90,23 +90,35 @@ if (track) {
 const skillsData = {
     dev: {
         title: "Développement Web & Logiciel",
-        skills: ["Python", "Java / C++", "HTML / CSS / JavaScript", "React / Node.js", "Git & GitHub"]
+        skills: ["Python", "Java", "C", "HTML / CSS / JavaScript / Bootstrap", "React / Node.js", "Next.js / Vue.js"]
     },
     data: {
-        title: "Data & IA",
-        skills: ["Bases de données SQL (PostgreSQL)", "Pandas / NumPy / Scikit-Learn", "Machine Learning & Deep Learning", "Analyse de séries temporelles"]
+        title: "Base de données",
+        skills: ["MySQL - phpMyAdmin", "PostgreSQL - pgAdmin", "Notion de MariaDB/InfluxDB", "Notions de NoSQL (hstore/Stack ELK)"]
     },
     sysres: {
         title: "Systèmes & Réseaux",
-        skills: ["Administration Linux / Windows", "Routage & Switching", "Scripting (Python, Bash)", "Support utilisateur (GLPI)"]
+        skills: ["Virtualisation (Ubuntu / Debian / Proxmox)", "Routage & Switching (Cisco PacketTracer)", "Analyse traffic Web (WireShark)", "Scripting (Python, Bash)", "Support utilisateur (GLPI)"]
+    },
+    qualite: {
+        title: "Qualité de developpement",
+        skills: ["Git", "Docker", "Maven", "SpringBoot", "Tests Junit5", "Mock Java", "Notions de Pipeline CI/CD"]
+    },
+    gestion: {
+        title: "Gestion de projet",
+        skills: ["Diagramme de Gantt", "Méthodes AGILES", "Méthodes PERT", "Rédaction de documentations techniques", "Conception maquettes Figma"]
+    },
+    certification: {
+        title: "Certifications",
+        skills: ["MOOC SecNumAcadémie ANSSI", "Permis B"]
     },
     langues: {
         title: "Langues",
-        skills: ["Français (Maternel)", "Anglais (Niveau B2)", "Espagnol (Niveau A2)"]
+        skills: ["Français (Maternel)", "Anglais (Niveau B2)", "Espagnol (Niveau B1)"]
     },
     soft: {
         title: "Soft Skills",
-        skills: ["Travail en équipe", "Rigueur et organisation", "Curiosité intellectuelle", "Adaptabilité", "Résolution de problèmes complexes"]
+        skills: ["Travail en équipe", "Rigueur et organisation", "Investissement et adaptabilité", "Créativité et curiosité", "Empathie et bienveillance"]
     }
 };
 
@@ -120,14 +132,14 @@ function openModal(category) {
     const data = skillsData[category];
     if (data && modalTitle && modalBody && modalOverlay) {
         modalTitle.textContent = data.title;
-        
+
         const ul = document.createElement('ul');
         data.skills.forEach(skill => {
             const li = document.createElement('li');
             li.textContent = skill;
             ul.appendChild(li);
         });
-        
+
         modalBody.innerHTML = '';
         modalBody.appendChild(ul);
         modalOverlay.classList.add('active');
@@ -165,13 +177,13 @@ if (modalOverlay) {
 const contactForm = document.querySelector('.contact-form');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
+    contactForm.addEventListener('submit', async function (e) {
         // Empêche la page de se recharger et d'aller sur la page Formspree
-        e.preventDefault(); 
-        
+        e.preventDefault();
+
         const submitBtn = contactForm.querySelector('.submit-btn');
         const initialBtnText = submitBtn.textContent;
-        
+
         // État de chargement
         submitBtn.textContent = 'Envoi en cours...';
         submitBtn.disabled = true;
@@ -193,7 +205,7 @@ if (contactForm) {
                 submitBtn.style.backgroundColor = '#4caf50';
                 submitBtn.style.color = '#fff';
                 contactForm.reset();
-                
+
                 // Remise à l'état initial du bouton après 4 secondes
                 setTimeout(() => {
                     submitBtn.textContent = initialBtnText;
@@ -204,9 +216,9 @@ if (contactForm) {
             } else {
                 // Erreur serveur (champ non rempli, captcha, etc)
                 submitBtn.textContent = 'Erreur lors de l\'envoi';
-                submitBtn.style.backgroundColor = '#f44336'; 
+                submitBtn.style.backgroundColor = '#f44336';
                 submitBtn.style.color = '#fff';
-                
+
                 setTimeout(() => {
                     submitBtn.textContent = initialBtnText;
                     submitBtn.style.backgroundColor = '';
@@ -218,9 +230,9 @@ if (contactForm) {
             // Erreur réseau (pas de connexion internet par exemple)
             console.error('Erreur réseau:', error);
             submitBtn.textContent = 'Erreur réseau';
-            submitBtn.style.backgroundColor = '#f44336'; 
+            submitBtn.style.backgroundColor = '#f44336';
             submitBtn.style.color = '#fff';
-            
+
             setTimeout(() => {
                 submitBtn.textContent = initialBtnText;
                 submitBtn.style.backgroundColor = '';
@@ -240,7 +252,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            observer.unobserve(entry.target); 
+            observer.unobserve(entry.target);
         } else {
             entry.target.classList.remove('active');
         }
@@ -265,18 +277,18 @@ tiltCards.forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left; // Position X de la souris dans la carte
         const y = e.clientY - rect.top;  // Position Y de la souris dans la carte
-        
+
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
+
         // Calcule la rotation (max 15 degrés) pour donner l'effet 3D
         const rotateX = ((y - centerY) / centerY) * -15;
         const rotateY = ((x - centerX) / centerX) * 15;
-        
+
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
         card.style.transition = 'transform 0.1s ease-out';
     });
-    
+
     card.addEventListener('mouseleave', () => {
         card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
         card.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
@@ -294,7 +306,7 @@ if (hamburger && navLinksUl) {
     // Ouvre / Ferme le menu au clic sur le hamburger
     hamburger.addEventListener('click', () => {
         navLinksUl.classList.toggle('active');
-        hamburger.classList.toggle('toggle'); 
+        hamburger.classList.toggle('toggle');
     });
 
     // Ferme le menu automatiquement quand on clique sur un lien
